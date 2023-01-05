@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+  <script src="vaidate.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<style>
+.container{
+height:  900px;
+width: 550px;
+font-size: 15px;
+border: 10px solid royalblue;
+margin-top: 20px;
+margin-bottom: 30px;
+}
+#heading{
+    text-align: center;
+}
+.btn.btn-success{
+margin-left: 200px;
+}
+
+</style>
+</head>
+<body>
+    <div class="container">
+        
+        <h4 id="heading">Registration Form</h4><br>
+            <input type="text" class="form-control" name="Name" id="Name" placeholder="Enter Name"><br>
+            <h6 style="color:red" id="name"></h5>
+            <input type="text" class="form-control" name="Email" id="Email" placeholder="Enter Email"><br>
+            <h6 style="color:red" id="email"></h5>
+            <input type="password" class="form-control" name="pass" id="pass" placeholder="password"><br>
+            <h6 style="color:red" id="password"></h5>
+            <input type="password" class="form-control" name="pass2" id="cpass" placeholder="confirm password"><br>
+            <h6 style="color:red" id="cpassword"></h5>
+            <h5>
+                Select Gender
+            </h5>  
+                Male
+                <input type="radio" id="male" value="male" name="usergender">
+                Female
+                <input type="radio" id="female" value="female" name="usergender"> <br>
+                <h6 style="color:red" id="genders"></h5>
+            <h5>Hobbies</h5>
+            <input name="Hobbies" type="checkbox" id="Cricket"  value="Cricket">
+            <label for="Cricket"> Cricket</label><br>
+            <input name="Hobbies" type="checkbox" id="FootBall" value="FootBall">
+            <label class="Hobbies" for="FootBall">FootBall</label><br>
+            <input name="Hobbies" type="checkbox" id="Tennis"  value="Tennis">
+            <label for="Tennis"> Tennis</label><br>
+            <h6 style="color:red" id="hobby"></h5>
+            <h5>Remarks</h5>
+            <textarea rows="4" cols="50" name="remark" id="Remarks">
+            </textarea>
+            <h6 style="color:red" id="remark"></h5>
+            
+            <label for="city">City:</label><br><br>
+            <select name="city" id="city">
+              <option value="Mumbai">Mumbai</option>
+              <option value="Pune">Pune</option>
+              <option value="Delhi">Delhi</option>
+            </select><br><br>
+            <input type="button" onclick="ValidateForm()" value="Submit" class="btn btn-success">
+  
+</div>
+</body>
+</html>
