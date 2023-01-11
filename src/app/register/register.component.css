@@ -1,0 +1,18 @@
+.form-layout{
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    width: 95%;
+    align-self: center;
+    align-items: center;
+    margin: 1rem;
+    border: 2px solid blue;
+    box-shadow: 2px 2px 4px blue;
+    border-radius: 17px;
+    padding: 1rem;
+    top: 3.5rem;
+    justify-content: center;
+}
+.error {
+    color: red;
+}

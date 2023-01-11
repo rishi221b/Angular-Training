@@ -1,0 +1,18 @@
+<!-- <p>login works!</p> -->
+<div class="registerbox">
+    <div class="register-layout">
+        <h1 color="warn">Login</h1>
+            <div class="form-layout">
+                <mat-form-field>
+                    <mat-label>Enter your Username</mat-label>
+                    <input matInput placeholder="Your Username" [(ngModel)]="login.name">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Enter your password</mat-label>
+                    <input matInput type="password" [(ngModel)]="login.password">
+                </mat-form-field>
+                <!-- <button mat-raised-button color="primary" (click)="Login()">Register</button> -->
+                <button mat-raised-button color="primary" (click)="Login()">Login</button>
+            </div>
+    </div>
+</div>

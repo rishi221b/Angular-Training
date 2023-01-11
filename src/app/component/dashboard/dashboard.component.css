@@ -1,0 +1,20 @@
+.example-card {
+    max-width: 400px;
+    margin: 1rem;
+  }
+  
+  .example-header-image {
+    background-image: url('http://clipart-library.com/new_gallery/23-231692_it-png-download-image-logo-png.png');
+    background-size: cover;
+  }
+  .flex{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  .add-to-cart-btn {
+    background-color: blue;
+  }
+  .buy-now-btn {
+    background-color: blue;
+  }

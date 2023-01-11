@@ -1,0 +1,19 @@
+{
+    "Products":[
+        {
+            "id":1,
+            "name":"Tv",
+            "rating":2.3
+        },
+        {
+            "id":2,
+            "name":"Thinkpad",
+            "rating":0.3
+        },
+        {
+            "id":3,
+            "name":"Redmi Tv",
+            "rating":2.3
+        }
+    ]
+}

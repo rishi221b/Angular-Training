@@ -1,0 +1,28 @@
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  .registerbox{
+
+    position: relative;
+    width: 400px;
+    margin: auto;
+    top: 10%;
+   
+  }
+
+  .form-layout{
+    display: flex;
+    flex-direction: column;
+  }
+
+  h1{
+    color:orangered;
+    text-align: center;
+
+  }

@@ -1,0 +1,29 @@
+.myForm {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    width: 20%;
+    align-items: center;
+    border: 2px solid blue;
+    box-shadow: 2px 2px 4px blue;
+    border-radius: 17px;
+    padding: 3rem;
+    top: 3.5rem;
+}
+input,select{
+    width: 98%;
+    margin-bottom: 1rem;
+    height: 1.5rem;
+}
+.myBtn {
+    width: 80%;
+    margin: 1rem;
+}
+.formdiv{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.text-danger {
+    color: red;
+}
