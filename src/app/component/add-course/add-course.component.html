@@ -1,0 +1,49 @@
+<div class="formdiv">
+<form [formGroup]="AddCourseForm" (ngSubmit)="AddCourse(AddCourseForm)" class="myForm">
+
+    <mat-label for="course-name">Course Name: </mat-label>
+    <input matInput id="course-name" type="text" formControlName="courseName">
+    <div class="text-danger" *ngIf="AddCourseForm.get('courseName').invalid && (AddCourseForm.get('courseName').dirty || AddCourseForm.get('courseName').touched)">
+      Please Provide Name
+    </div>
+  <div>
+    <label>
+      CourseCategory:
+      <!-- <input formControlName="CourseCategory"  class="form-control" placeholder="Please Enter CourseCategory"> -->
+      <br>
+      <select formControlName="courseCategory" class="custom-select form-control" id="inputGroupSelect03">
+        <option selected>Choose...</option>
+        <option value="Web">Web</option>
+        <option value="IT">IT</option>
+        <option value="Sports">Sports</option>
+        <option value="Management">Management</option>
+      </select>
+    </label>
+    <div class="text-danger" *ngIf="AddCourseForm.get('courseCategory').invalid && (AddCourseForm.get('courseCategory').dirty || AddCourseForm.get('courseCategory').touched)">
+      Please Provide Category
+    </div>
+  </div> 
+    
+    <label for="course-price">Enter Price: </label>
+    <input id="course-price" type="number" formControlName="coursePrice">
+    <div class="text-danger" *ngIf="AddCourseForm.get('coursePrice').invalid && (AddCourseForm.get('coursePrice').dirty || AddCourseForm.get('coursePrice').touched)">
+      Please Provide Price
+    </div>
+
+    <label for="course-image-path">Enter Image Path: </label>
+    <input id="course-image-path" type="text" formControlName="imagePath">
+    <div class="text-danger" *ngIf="AddCourseForm.get('imagePath').invalid && (AddCourseForm.get('imagePath').dirty || AddCourseForm.get('imagePath').touched)">
+      Please Provide Image Path
+    </div>
+
+    <label for="course-description">Enter Course Description: </label>
+    <input id="course-description" type="text" formControlName="courseDescription">
+    <div class="text-danger" *ngIf="AddCourseForm.get('courseDescription').invalid && (AddCourseForm.get('courseDescription').dirty || AddCourseForm.get('courseDescription').touched)">
+      Please Provide Image Path
+    </div>
+    <button mat-raised-button color="accent" type="submit" class="myBtn" [disabled]="!AddCourseForm.valid">Submit</button>
+  </form>
+</div>
+
+  <!-- <label for="course-category">Course Category: </label>
+    <input id="course-category" type="text" formControlName="courseCategory"> -->

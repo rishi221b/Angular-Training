@@ -1,0 +1,8 @@
+.example-container {
+    display:flex;
+    flex-direction: column;
+    margin-left: 1rem;
+  }
+  .editbutton {
+    margin-left: 1rem;
+  }

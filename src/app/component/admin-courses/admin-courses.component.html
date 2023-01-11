@@ -1,0 +1,93 @@
+<!-- <div>
+    <h1 class="text-center title">All Courses</h1>
+    <button class="btn btn-primary m-2 addCourseBtn" routerLink="../add-course">
+      Add Course
+    </button>
+    <hr class="m-0" />
+  </div>
+  <table class="table text-center align-middle">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Coursename</th>
+        <th scope="col">Category</th>
+        <th scope="col">Price</th>
+        <th scope="col">Course Description</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <th scope="row">
+          <img src="{{ product.imagePath }}" style="width: 150px" />
+        </th>
+        <td>{{ product.course_Name }}</td>
+        <td>{{ product.category }}</td>
+        <td>{{ product.price }}</td>
+        <td>{{ product.course_Description }}</td>
+        <td>
+          <button class="btn btn-sm btn-primary m-2" [routerLink]="['/edit-course',product.product_Id]">Edit Course</button><br />
+          <button
+            class="btn btn-sm btn-danger m-2" (click)="DeleteCourse(product)">
+            Delete Course
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table> -->
+  <!-- /*(click)="DeleteCourse(product)"*/ -->
+  <button mat-raised-button color="accent" routerLink="../add-course">
+    Add Course
+  </button>
+  <mat-form-field appearance="standard">
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+  </mat-form-field>
+  
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="imagePath">
+      <th mat-header-cell *matHeaderCellDef>  </th>
+      <td mat-cell *matCellDef="let element"> <img [src]="element.imagePath" style="width: 150px"/> </td>
+    </ng-container>
+    <ng-container matColumnDef="course_Name">
+      <th mat-header-cell *matHeaderCellDef> Course Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.course_Name}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="category">
+      <th mat-header-cell *matHeaderCellDef> Category </th>
+      <td mat-cell *matCellDef="let element"> {{element.category}}</td>
+    </ng-container>
+
+  <!-- Symbol Column -->
+    <ng-container matColumnDef="course_Description">
+      <th mat-header-cell *matHeaderCellDef> Course Description </th>
+      <td mat-cell *matCellDef="let element"> {{element.course_Description}} </td>
+    </ng-container>
+    <!-- Weight Column -->
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef> Course Price</th>
+      <td mat-cell *matCellDef="let element"> {{element.price}} $</td>
+    </ng-container>
+  
+    
+    <!-- Button Coloumn -->
+    <ng-container matColumnDef="actions">
+      <mat-header-cell  *matHeaderCellDef >  </mat-header-cell>
+      <mat-cell *matCellDef="let element" >
+           <button mat-raised-button color="accent" [routerLink]="['/edit-course',element.product_Id]"> Edit </button>
+           <button mat-raised-button color="warn" (click)="DeleteCourse(element)"> Delete Course </button>
+      </mat-cell>  
+    </ng-container>
+
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+    </tr>
+  </table>
+  
