@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getUser(userId,callback){
+            console.log("Get User");
+            setTimeout(()=>{
+                callback({
+                    userId:userId,
+                    username:'mik'
+                    
+                });
+            }),2000
+        }
+        function getServices(user,callback){
+            console.log("Get services");
+            setTimeout(()=>{
+                callback("A","b","c","d");
+            }),2000
+        }
+        function getServiceCost(services,callback){
+            console.log("Get cost");
+            setTimeout(()=>{
+                callback(services.length*3);
+            }),2000
+        }
+
+        getUser(101,(user)=>{
+getServices(user,(services)=>{
+    getServiceCost(services,(cost)=>{
+        console.log(`the services cost is ${cost}`)
+    })
+})
+        })
+    </script>
+</body>
+</html>

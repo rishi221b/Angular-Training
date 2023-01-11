@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback Example</title>
+</head>
+<body>
+    <h2> CallBack Example</h2>
+    <script>
+         function getUser(userId,callback){
+            console.log("Get used from database");
+            setTimeout(()=>{
+               callback({
+                  userId:userId,
+                  username:'anil'
+               })
+            },2000)
+         }
+         function getServices(user,callback){
+            console.log("Get services of "+user.username);
+            setTimeout(()=>{
+               callback(["A","B","C","D"])
+            },2000)
+         }
+         function getServiceCost(services,callback){
+            console.log("Get services cosr of "+services);
+            setTimeout(()=>{
+               callback(services.length*300)
+            },2000)
+         }
+         //nested callback 
+         getUser(101,(user)=>{
+             getServices(user,(services)=>{
+                getServiceCost(services,(cost)=>{
+                    console.log(`The service cost is ${cost}`)
+                })
+             })
+         })
+    </script>
+</body>
+</html>

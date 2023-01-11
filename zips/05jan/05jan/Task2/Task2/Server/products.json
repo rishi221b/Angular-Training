@@ -1,0 +1,40 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Abc",
+      "price": "2345",
+      "quantity": "5"
+    },
+    {
+      "id": 2,
+      "name": "B",
+      "price": 3345,
+      "quantity": 4
+    },
+    {
+      "id": 3,
+      "name": "C",
+      "price": 4345,
+      "quantity": 7
+    },
+    {
+      "id": 4,
+      "name": "D",
+      "price": 5345,
+      "quantity": 8
+    },
+    {
+      "id": 5,
+      "name": "E",
+      "price": 6345,
+      "quantity": 9
+    },
+    {
+      "id": "783bae47-f1cb-4463-a0a1-eebd5dda1ccb",
+      "name": "F",
+      "price": "300",
+      "quantity": "1"
+    }
+  ]
+}

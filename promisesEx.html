@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>callbacks and promises</title>
+</head>
+<body>
+    <script>
+        function getUser(userId){
+           return new Promise((resolve,reject)=>{
+console.log("Get user");
+setTimeout(()=>{
+    resolve({
+                    userId:userId,
+                    username:'mik'
+                    
+                });
+},2000)
+
+           })
+           
+        }
+        function getServices(user){
+            return new Promise((resolve,reject)=>{
+                console.log("Get services");
+            setTimeout(()=>{
+                resolve("A","b","c","d");
+            },2000)
+            })
+           
+        }
+        function getServiceCost(services){
+            return new Promise((resolve,reject)=>{
+                console.log("Get cost");
+            setTimeout(()=>{
+                resolve(services.length*300);
+            },2000)
+            })
+            
+        }
+
+        getUser(101)
+        .then(getServices)
+        .then(getServiceCost)
+        .then(cost=>{
+            console.log( `the service cost is ${cost}`)
+        })
+
+        .catch(err=>console.log(err))
+    </script>
+</body>
+</html>

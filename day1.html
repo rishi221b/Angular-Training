@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let a = 10;
+        // const b = 10;
+        // a = a * 10;  arrow and backtick
+        // let res = () => (a + b)
+        // console.log(`value of a ${a} and result is `);
+        // console.log(res()); 
+
+        //getter and setter
+        class demo {
+            constructor(name)
+            {
+                this._name = name;
+            }
+            get name()
+            {
+                return this._name
+            }
+            set name(newName)
+            {
+                this._name = newName;
+            }
+        }
+        let obj = new demo("Rishii");
+        console.log(obj.name);
+        obj.name = "Patil";
+        console.log(obj.name);
+
+
+        //array
+        function restDemo(...args)
+        {
+            let sum = 0;
+            args.forEach(val => sum+=val);
+            return sum
+        }
+        console.log(restDemo(23,24,25,26,27,28,29));
+
+        //Inheritance
+        class Parent
+        {
+            par()
+            {
+                return "Rishii";
+            }
+        }
+        class Child extends Parent
+        {
+            chi()
+            {
+                let x = super.par();
+                return `Patil ${x}`;
+            }
+        }
+        let obj2 = new Child();
+        let ex = obj2.chi();
+        console.log(ex);
+
+    </script>
+</body>
+</html>

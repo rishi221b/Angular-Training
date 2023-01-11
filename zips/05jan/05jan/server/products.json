@@ -1,0 +1,40 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "A",
+      "price": 2345,
+      "quantity": 5
+    },
+    {
+      "id": 2,
+      "name": "B",
+      "price": 3345,
+      "quantity": 4
+    },
+    {
+      "id": 3,
+      "name": "C",
+      "price": 4345,
+      "quantity": 7
+    },
+    {
+      "id": 4,
+      "name": "D",
+      "price": 5345,
+      "quantity": 8
+    },
+    {
+      "name": "rishi",
+      "price": "5000",
+      "quantity": "1",
+      "id": 5
+    },
+    {
+      "name": "hhah",
+      "price": "200",
+      "quantity": "3",
+      "id": 6
+    }
+  ]
+}

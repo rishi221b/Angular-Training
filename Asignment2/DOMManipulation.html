@@ -1,0 +1,147 @@
+<!<DOCTYPE html>
+    <html>
+        <head>
+            <title>
+                Dom Manipulation
+            </title>
+        </head>
+        <body>
+            <h2>DOM MANIPULATION</h2>
+            <button onclick="fetchDataPost()">Get Posts</button>
+            <button onclick="fetchDataComment()">Get Comments</button>
+            <button onclick="fetchDataAlbum()">Get Albums</button>
+            <button onclick="fetchDataPhotos()">Get Photos</button>
+            <button onclick="fetchDataTodos()">Get Todos</button>
+            <button onclick="fetchDataUsers()">Get Users</button>
+
+
+
+
+
+            <div id="target"></div>
+            <script>
+               function fetchDataPost()
+{
+
+const URL ="https://jsonplaceholder.typicode.com/posts"
+fetch(URL)
+.then(res => res.json())
+.then(data=>{
+    let str =''
+    data.forEach(element =>{
+        str+=`<h3>${element.title}</h3>${element.body}<hr/></p>`;
+        document.getElementById("target").innerHTML=str;
+    });
+    console.log(data)
+})
+.catch(err=>console.log(err))
+}
+        
+
+function fetchDataComment()
+{
+
+const URL ="https://jsonplaceholder.typicode.com/comments"
+fetch(URL)
+.then(res => res.json())
+.then(data=>{
+    let str =''
+    console.log(data);
+    data.forEach(element =>{
+        str+=`<h3>Post Id : ${element.postId}</h3><h3> Id : ${element.id}</h3><h4>Name : ${element.name}</h4><h4>Email : ${element.email}</h4><h4>Body : ${element.body}<h4/><hr/></p>`;
+        document.getElementById("target").innerHTML=str;
+    });
+    console.log(data)
+})
+.catch(err=>console.log(err))
+}
+
+
+function fetchDataAlbum()
+{
+
+const URL ="https://jsonplaceholder.typicode.com/albums"
+fetch(URL)
+.then(res => res.json())
+.then(data=>{
+    let str =''
+    console.log(data);
+    data.forEach(element =>{
+        str+=`<h3>User Id : ${element.userId}</h3><h3> Id : ${element.id}</h3><h4>Title : ${element.title}</h4><hr/></p>`;
+        document.getElementById("target").innerHTML=str;
+    });
+    console.log(data)
+})
+.catch(err=>console.log(err))
+}
+
+function fetchDataPhotos()
+{
+
+const URL ="https://jsonplaceholder.typicode.com/photos"
+fetch(URL)
+.then(res => res.json())
+.then(json=>{
+    let str =''
+    for(i=0;i<200;i++){
+            str+=`<h5>ID : ${json[i].id}</h5>
+            <img src="${json[i].url}" width="200px" height="200px">
+            <p>Title : ${json[i].title}</p><hr>`
+            document.getElementById("target").innerHTML=str;
+        }
+})
+.catch(err=>console.log(err))
+}
+
+function fetchDataTodos()
+{
+
+const URL ="https://jsonplaceholder.typicode.com/todos"
+fetch(URL)
+.then(res => res.json())
+.then(data=>{
+    let str =''
+    console.log(data);
+    data.forEach(element =>{
+        str+=`<h3>User Id : ${element.userId}</h3><h3> Id : ${element.id}</h3><h4>Title : ${element.title}</h4><h4>Completed : ${element.completed}</h4><hr/></p>`;
+        document.getElementById("target").innerHTML=str;
+    });
+    console.log(data)
+})
+.catch(err=>console.log(err))
+}
+
+function fetchDataUsers()
+{
+
+const URL ="https://jsonplaceholder.typicode.com/users"
+fetch(URL)
+.then(res => res.json())
+.then(data=>{
+    let str =''
+    console.log(data);
+    data.forEach(element =>{
+        str+=`<h3> Id : ${element.id}</h3><h3> Name: ${element.name}</h3>
+        <h4>Username : ${element.username}</h4><h4>Email : ${element.email}</h4>
+        <h4>Address :</h4>
+        <h5>Street : ${element.address.street}</h5>
+        <h5>Suite : ${element.address.suite}</h5>
+
+        
+        <h4>Phone : ${element.phone}</h4><h4>Website : ${element.website}</h4>
+        <h4>Company :</h4>
+        <h5>Name : ${element.company.name}</h5>
+        <h5>Phrase : ${element.company.catchPhrase}</h5>
+
+        <hr/></p>`;
+        document.getElementById("target").innerHTML=str;
+    });
+    console.log(data)
+})
+.catch(err=>console.log(err))
+}
+
+
+            </script>
+        </body>
+    </html>

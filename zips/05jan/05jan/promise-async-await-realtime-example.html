@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise Example</title>
+</head>
+<body>
+    <h2> Promise Example</h2>
+    <script>
+         function getUser(userId){
+             return new Promise((resolve,reject)=>{
+                console.log("Get used from database");
+                    setTimeout(()=>{
+                           resolve({
+                            userId:userId,
+                            username:'anil'
+                             })
+                   },2000)
+             })
+            
+         }
+         function getServices(user){
+            return new Promise((resolve,reject)=>{
+            console.log("Get services of "+user.username);
+            setTimeout(()=>{
+               resolve(["A","B","C","D"])
+            },2000)
+        })
+         }
+         function getServiceCost(services){
+            return new Promise((resolve,reject)=>{
+            console.log("Get services cosr of "+services);
+            setTimeout(()=>{
+               resolve(services.length*300)
+            },2000)
+        })
+         }
+        async function showServiceCost(){
+            try{
+            let user=await getUser(101);
+            let services=await getServices(user);
+            let cost=await getServiceCost(services);
+            console.log(`The service cost is ${cost}`)
+            }
+            catch(err){
+                console.log(err)
+            } 
+        }
+        showServiceCost()
+    </script>
+</body>
+</html>

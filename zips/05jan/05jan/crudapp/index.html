@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>JavaScript Crud</title>
+  </head>
+  <body>
+    <h1>Latest Products</h1>
+    <a href="add.html" class="btn btn-danger"> Add Product</a>
+    <section class="container">
+          <div class="row" id="target"> 
+          </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>
+        console.log("Hello")
+        const URL="http://localhost:3000/products/";
+        fetch(URL)
+        .then(res=> res.json())
+        .then(data=>{
+            let str='';
+             data.forEach(value=>{
+                 str+=` <div class="col-sm-4 card">
+                    <div class="card-body">
+    <h5 class="card-title">${value.name}</h5>
+    <p class="card-text"> Price : Rs.${value.price} <br/> Quantity : ${value.quantity}</p>
+    <button class="btn btn-danger" onclick="deletePro(${value.id})">Delete</button>
+    <a href="edit.html?pid=${value.id}" class="btn btn-primary"> Edit </a>
+  </div>
+                  </div>`;
+                  document.getElementById("target").innerHTML=str;
+             })
+        })
+        .catch(err=> console.log(err));
+        function deletePro(id)
+        {
+            if(confirm("Do u want to delete product?")){
+                fetch(`${URL}${id}`,{
+                    method:'DELETE'
+                })
+                .catch(res=> res.json())
+                .catch(data=>{
+                     if(data){
+                        alert("Product Deleted");
+                        location.href='index.html'
+                     }
+                })
+            }
+        }
+    </script>
+    
+   
+  </body>
+</html>

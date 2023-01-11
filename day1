@@ -1,0 +1,5 @@
+let a = 10;
+const let b = 10;
+a = a * 10;
+let res = add => (a + b)
+console.log(res);
